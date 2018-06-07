@@ -44,6 +44,7 @@ public class MainEforia {
 			
 			long posInDet = (indInDet - 1)*(8+18);
 			raf2.seek(posInDet);
+			String date = readString(18, raf2);
 			raf2.writeDouble(newXreos);
 			
 			indCodes++;
