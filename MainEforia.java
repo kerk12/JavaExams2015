@@ -19,17 +19,17 @@ public class MainEforia {
 	
 	public static void main(String[] args) throws IOException{
 		
-		raf1 = new RandomAccessFile("eforia.dbs","rw");
-		raf2 = new RandomAccessFile("details.dbs","rw");
+		raf1 = new RandomAccessFile("eforia.dbs","r");
+		raf2 = new RandomAccessFile("details.dbs","r");
 		raf3 = new RandomAccessFile("codes.dbs","r");
-		raf4 = new RandomAccessFile("eforia.dbs","r");
+		raf4 = new RandomAccessFile("xreos.dbs","r");
 		
 		int indCodes = 1;
-		while ((indCodes)*4 < (raf3.length())){
+		while ((indCodes - 1)*4 < (raf3.length())){
 			long posCodes = (indCodes - 1)*4;
 			long posNew = (indCodes - 1)*8;
 			raf3.seek(posCodes);
-			raf4.seek(posCodes);
+			raf4.seek(posNew);
 			
 			int citToUpd = raf3.readInt();
 			double newXreos = raf4.readDouble();
