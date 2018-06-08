@@ -48,5 +48,9 @@ public class MainEforia {
 			
 			indCodes++;
 		}
+		raf1.close();
+		raf2.close();
+		raf3.close();
+		raf4.close();
 	}
 }
